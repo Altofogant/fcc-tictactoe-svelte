@@ -8,3 +8,12 @@ export const nextMove = async (space) => {
         console.log(e, 'error connecting to the server')
     };
 };
+
+export const newGame = async () => {
+    try {
+        await fetch(`${process.env.apiUrl}/reset`);
+    } catch(e) {
+        console.log(e);
+        return 'error connecting to the server';
+    }
+}
